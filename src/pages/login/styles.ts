@@ -32,7 +32,7 @@ export const style = StyleSheet.create({
         paddingTop: 40
     },
     logo: {
-        width: 115,
+        width: 300,
         height: 115
     },
     title: {
