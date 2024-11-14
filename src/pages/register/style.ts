@@ -34,7 +34,7 @@ export const style = StyleSheet.create({
         //justifyContent: 'flex-end',
     },
     logo: {
-        width: 115,
+        width: 200,
         height: 115
     },
     title: {

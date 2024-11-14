@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image, ScrollView} from 'react-native';
 
 import { style } from "./style";
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo_novo.png';
 import { MaterialIcons, Octicons } from '@expo/vector-icons'
 import { themes } from "../../global/themes";
 import { Input } from "../../components/input";
@@ -65,7 +65,6 @@ export default function Register ({ onSwitchScreen }: RegisterProps) {
                     style={style.logo}
                     resizeMode="contain"
                 />
-                <Text style={style.title}>Dá Vida</Text>
             </View>
 
             <View style={style.boxMid}>
