@@ -57,7 +57,8 @@ export default function Login ({ onSwitchScreen, onLoginSuccess }: LoginProps) {
                     source={Logo}
                     style={style.logo}
                     resizeMode="contain"
-                />              
+                />
+                <Text style={style.title}>Dá Vida</Text>
             </View>
             <View style={style.boxMid}>
                 <Input 
