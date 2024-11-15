@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "davida",
+    "scheme": "my-davida",
     "slug": "davida",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,12 +23,16 @@
       "package": "com.lpcjm.davida"
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
         "projectId": "726b4718-e177-4e92-a99c-6870000c5ccf"
       }
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

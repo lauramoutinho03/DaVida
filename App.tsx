@@ -14,6 +14,7 @@ import FAQ from './src/pages/faq';
 import History from './src/pages/history';
 import Notificacoes from './src/pages/notificacoes';
 import Campanhas from './src/pages/campanhas';
+import DetalhesInstituicao from './src/pages/detalhesInstituicao';
 
 //const Stack = createStackNavigator();
 
@@ -24,9 +25,22 @@ export default function App() {
     setCurrentScreen('Home'); // Função para mudar para a homepage
   };
 
-  const switchScreen = (screen: string) => {
-    setCurrentScreen(screen); // Função para mudar para diferentes telas
+  const switchScreen = (screen: string, params?: any) => {
+    setCurrentScreen(screen);
+    setCurrentScreenParams(params || null); // Armazena os parâmetros para a próxima tela
   };
+  
+
+  const [currentScreenParams, setCurrentScreenParams] = useState<{
+    instituicao?: { nome: string; 
+      tipo: string; 
+      brigada: string; 
+      local: string;
+      horario: string;
+      niveisNecessidade: { [tipoSangue: string]: number }; 
+    };
+  } | null>(null);
+
 
   return (
     <View style={styles.container}>
@@ -49,6 +63,18 @@ export default function App() {
         <Notificacoes onSwitchScreen={switchScreen} currentScreen={currentScreen} />
       ): currentScreen === 'Campanhas' ? (
         <Campanhas onSwitchScreen={switchScreen} currentScreen={currentScreen} />
+      ): currentScreen === 'DetalhesInstituicao' ? (
+        <DetalhesInstituicao
+          onSwitchScreen={switchScreen}
+          currentScreen={currentScreen}
+          route={{ params: currentScreenParams || { instituicao: { nome: '', 
+            tipo: '', 
+            brigada: '', 
+            local: '',
+            horario: '',
+            niveisNecessidade: {},
+          } } }}
+        />
       ): null}
     </View>
   );

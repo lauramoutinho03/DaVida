@@ -82,7 +82,7 @@ export default function Home ({ onSwitchScreen, currentScreen}: HomeProps) {
             </ScrollView> */}
 
             <View style={style.listContainer} >
-                <InstituicaoList />
+                <InstituicaoList onSwitchScreen={onSwitchScreen} />
             </View>
             
             {/* Botão para realizar marcação */}
