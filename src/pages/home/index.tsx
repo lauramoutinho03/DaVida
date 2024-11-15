@@ -10,6 +10,7 @@ import { Input } from "../../components/input";
 import { Button } from "../../components/Button";
 import MenuInferior from "../../components/MenuInferior"
 import InstituicaoListItem from "../../components/InstituicaoListItem";
+import InstituicaoList from "../../components/InstituicaoList";
 
 type HomeProps = {
     onSwitchScreen: (screen: string) => void;
@@ -34,10 +35,10 @@ export default function Home ({ onSwitchScreen, currentScreen}: HomeProps) {
         <View style={style.container}>
             {/* Header com botões de notificações e informações */}
             <View style={style.header}>
-                <TouchableOpacity style={style.buttonHeader}>
+                <TouchableOpacity onPress={() => onSwitchScreen('Notificacoes')} style={style.buttonHeader}>
                     <MaterialIcons name="notifications" size={27} color={themes.colors.black} />
                 </TouchableOpacity>
-                <TouchableOpacity style={style.buttonHeader}>
+                <TouchableOpacity onPress={() => onSwitchScreen('Campanhas')} style={style.buttonHeader}>
                     <FontAwesome5 name="newspaper" size={25} color={themes.colors.black} />
                 </TouchableOpacity>
             </View>
@@ -72,21 +73,17 @@ export default function Home ({ onSwitchScreen, currentScreen}: HomeProps) {
                     </View>
                 </View>
 
-
             </View>
 
             {/* Lista de Instituições */}
-            <ScrollView style={style.listContainer} persistentScrollbar={true}>
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-                <InstituicaoListItem />
-            </ScrollView>
+            {/* <ScrollView style={style.listContainer} persistentScrollbar={true}>
+                <InstituicaoList />
+                
+            </ScrollView> */}
+
+            <View style={style.listContainer} >
+                <InstituicaoList />
+            </View>
             
             {/* Botão para realizar marcação */}
             <View style={style.boxBottom}>

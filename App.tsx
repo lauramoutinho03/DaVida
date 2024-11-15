@@ -12,6 +12,8 @@ import Home from './src/pages/home';
 import Profile from './src/pages/profile';
 import FAQ from './src/pages/faq';
 import History from './src/pages/history';
+import Notificacoes from './src/pages/notificacoes';
+import Campanhas from './src/pages/campanhas';
 
 //const Stack = createStackNavigator();
 
@@ -43,7 +45,11 @@ export default function App() {
         <FAQ onSwitchScreen={switchScreen} currentScreen={currentScreen} />
       ) : currentScreen === 'Profile' ? (
         <Profile onSwitchScreen={switchScreen} currentScreen={currentScreen} />
-      ) : null}
+      ) : currentScreen === 'Notificacoes' ? (
+        <Notificacoes onSwitchScreen={switchScreen} currentScreen={currentScreen} />
+      ): currentScreen === 'Campanhas' ? (
+        <Campanhas onSwitchScreen={switchScreen} currentScreen={currentScreen} />
+      ): null}
     </View>
   );
 }

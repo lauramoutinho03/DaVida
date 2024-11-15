@@ -27,11 +27,14 @@ export const style = StyleSheet.create({
       },
       button: {
         backgroundColor: themes.colors.lightGrey,
-        padding: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 13,
         borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
       },
       buttonText: {
         color: themes.colors.black,
-        fontSize: 13,
+        fontSize: 12,
       },
 })
